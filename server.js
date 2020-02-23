@@ -31,10 +31,7 @@ app.use(cors());
 
 // controllers (API routes)
 
-app.get('/', (req, res) => {
-    postgres.select('*').from('users')
-            .then(users => res.send(users))
-})
+app.get('/', (req, res) => {res.json('It is working')})
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, postgres, bcrypt) })
 
